@@ -49,6 +49,11 @@ button {
     color: black;
 }
 
+.clicked {
+    transform: scale(0.95);
+    opacity: 0.95;
+}
+
 #zero {
     grid-column: span 2;
 }
