@@ -30,37 +30,6 @@ function operate(number1, number2, operator) {
     }
 }
 
-// Get the display element
-const display = document.getElementById('display');
-
-// Get all the buttons
-const buttons = Array.from(document.querySelectorAll('button'));
-
-// Add event listeners to each button
-buttons.forEach(button => {
-    button.addEventListener('click', () => {
-        const value = button.value;
-
-        // Perform different actions based on the button's value
-        switch (value) {
-            case 'clear':
-                clearDisplay();
-                break;
-            case 'sign':
-                changeSign();
-                break;
-            case 'percent':
-                calculatePercent();
-                break;
-            case '=':
-                calculate();
-                break;
-            default:
-                appendToDisplay(value);
-        }
-    });
-});
-
 // Function to append the clicked value to the display
 function appendToDisplay(value) {
     display.textContent += value;
@@ -83,13 +52,26 @@ function calculatePercent() {
     display.textContent = (currentValue / 100).toString();
 }
 
-// Function to evaluate and display the result
-function calculate() {
-    try {
-        const result = eval(display.textContent);
-        display.textContent = result.toString();
-    } catch (error) {
-        display.textContent = 'Error';
-    }
-}
+// Get the display element
+const display = document.getElementById('display');
 
+// Add animation on clickss
+const buttons = Array.from(document.querySelectorAll("button"));
+buttons.forEach(button => {
+    button.addEventListener("mousedown", () => {
+        button.classList.add("clicked");
+    });
+    button.addEventListener("mouseup", () => {
+        button.classList.remove("clicked");
+    });
+})
+
+// Get all the operands
+const operands = Array.from(document.getElementsByClassName("operand"));
+console.table(operands);
+// Add event listeners to each operand
+operands.forEach(operand => {
+    operand.addEventListener('click', () => {
+        appendToDisplay(operand.value);
+    });
+});
