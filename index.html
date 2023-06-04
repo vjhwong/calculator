@@ -6,12 +6,35 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="style.css">
-    <title>Document</title>
+    <title>Calculator</title>
 </head>
 
 <body>
-
-    <script src="script.js" defer></script>
+    <main id="main">
+        <div id="calculator-container">
+            <div id="display">123</div>
+            <button type="button" id="clear" value="clear">AC</button>
+            <button type="button" id="sign" value="sign">+/-</button>
+            <button type="button" id="percent" value="percent">%</button>
+            <button type="button" class="operator" value="/">/</button>
+            <button type="button" class="operand" value="7">7</button>
+            <button type="button" class="operand" value="8">8</button>
+            <button type="button" class="operand" value="9">9</button>
+            <button type="button" class="operator" value="*">*</button>
+            <button type="button" class="operand" value="5">5</button>
+            <button type="button" class="operand" value="6">6</button>
+            <button type="button" class="operand" value="7">7</button>
+            <button type="button" class="operator" value="-">-</button>
+            <button type="button" class="operand" value="1">1</button>
+            <button type="button" class="operand" value="2">2</button>
+            <button type="button" class="operand" value="3">3</button>
+            <button type="button" class="operator" value="+">+</button>
+            <button type="button" id="zero" class="operand" value="0">0</button>
+            <button type="button" id="decimal" class="operand" value=".">.</button>
+            <button type="button" id="equals" class="operator" value="=">=</button>
+        </div>
+        <script src="script.js" defer></script>
+    </main>
 </body>
 
 </html>
